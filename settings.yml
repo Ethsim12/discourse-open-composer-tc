@@ -1,0 +1,44 @@
+open_composer_enabled:
+  default: true
+  type: bool
+
+open_composer_storage_key:
+  default: "open_composer_once"
+  type: string
+
+# If true, the initializer will ALSO open a composer using the defaults below
+# when there is NO localStorage payload, but the current URL matches open_composer_paths.
+open_composer_use_defaults_on_paths:
+  default: false
+  type: bool
+
+# Comma-separated path prefixes (no domain), e.g.:
+# /welcome,/c/introductions
+open_composer_paths:
+  default: "/welcome"
+  type: list
+  list_type: simple
+
+# Defaults used when open_composer_use_defaults_on_paths is true
+open_composer_default_mode:
+  default: "new_topic"
+  type: enum
+  choices:
+    - "new_topic"
+    - "reply"
+
+open_composer_default_category_id:
+  default: 19
+  type: integer
+
+open_composer_default_topic_id:
+  default: 0
+  type: integer
+
+open_composer_default_title:
+  default: "Introduce yourself"
+  type: string
+
+open_composer_default_body:
+  default: "Hi all — I’m…"
+  type: text
